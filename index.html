@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RogerStore – Hosting Game & Minecraft</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Tambahan styling */
+    .payment-summary, .payment-methods {
+      display: none;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .btn { display: inline-block; margin: 10px 5px; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+    .btn:hover { background: #0056b3; }
+    .plan .btn { cursor: pointer; }
+    .payment-methods img {
+      height: 120px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>RogerStore</h1>
+      <ul>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#services">Layanan</a></li>
+        <li><a href="#pricing">Paket</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h2>Hosting Minecraft & Game Berkekuatan Tinggi</h2>
+      <p>Performa stabil, keamanan maksimal, dukungan 24/7.</p>
+      <a href="#pricing" class="btn">Lihat Paket Sekarang</a>
+    </div>
+  </header>
+
+  <!-- ... sections lainnya tetap sama ... -->
+
+  <section id="pricing">
+    <h2>Pilih Paket Hosting</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Basic 5GB</h3>
+        <p>Rp 8.000/bln</p>
+        <ul>
+          <li>5 GB RAM • CPU 4‑Core</li>
+          <li>8 GB NVMe</li>
+          <li>Support Mod & Backup 📦</li>
+        </ul>
+        <a class="btn" onclick="showSummary('Basic 5GB', 'Rp 8.000/bln')">Pesan Sekarang</a>
+      </div>
+      <div class="plan popular">
+        <h3>Basic+ 8GB</h3>
+        <p>Rp 14.000/bln</p>
+        <ul>
+          <li>8 GB RAM • CPU 5‑Core</li>
+          <li>12 GB NVMe</li>
+          <li>Priority Support</li>
+        </ul>
+        <a class="btn" onclick="showSummary('Basic+ 8GB', 'Rp 14.000/bln')">Pesan Sekarang</a>
+      </div>
+      <div class="plan">
+        <h3>Basic++ 10GB</h3>
+        <p>Rp 21.000/bln</p>
+        <ul>
+          <li>10 GB RAM • CPU 5‑Core</li>
+          <li>24 GB NVMe</li>
+          <li>Mod & Plugin tanpa batas</li>
+        </ul>
+        <a class="btn" onclick="showSummary('Basic++ 10GB', 'Rp 21.000/bln')">Pesan Sekarang</a>
+      <div class="plan">
+        <h3>Premium 12GB</h3>
+        <p>Rp 28.000/bln</p>
+        <ul>
+          <li>12 GB RAM • CPU 5‑Core</li>
+          <li>24 GB NVMe</li>
+          <li>Mod & Plugin tanpa batas</li>
+        </ul>
+        <a class="btn" onclick="showSummary('Premium 12GB', 'Rp 28.000/bln')">Pesan Sekarang</a>
+      <div class="plan">
+        <h3>Premiumm+ 16GB</h3>
+        <p>Rp 34.000/bln</p>
+        <ul>
+          <li>16 GB RAM • CPU 5‑Core</li>
+          <li>24 GB NVMe</li>
+          <li>Mod & Plugin tanpa batas</li>
+        </ul>
+        <a class="btn" onclick="showSummary('Premium 16GB', 'Rp 34.000/bln')">Pesan Sekarang</a>
+      </div>
+      <!-- Tambahkan plan lainnya sesuai kebutuhan -->
+    </div>
+
+    <!-- STRUK PEMBAYARAN -->
+    <div class="payment-summary" id="summary">
+      <h3>Struk Pemesanan</h3>
+      <p><strong>Paket:</strong> <span id="selected-package"></span></p>
+      <p><strong>Harga:</strong> <span id="selected-price"></span></p>
+      <a class="btn" onclick="showPayment()">Beli Sekarang</a>
+    </div>
+
+    <!-- METODE PEMBAYARAN -->
+    <div class="payment-methods" id="payment-methods">
+      <h3>Pilih Metode Pembayaran</h3>
+      <p>Scan QR Code di bawah ini untuk membayar:</p>
+      <img src="qris-dana.png" alt="QRIS Dana">
+      <img src="gopay-qr.png" alt="GoPay QR">
+    </div>
+  </section>
+
+  <!-- ... sections lainnya tetap sama ... -->
+
+  <footer>
+    <p>&copy; 2025 RogerStore • Uptime 99.9% • Proteksi DDoS • NVMe SSD</p>
+  </footer>
+
+  <script>
+    function showSummary(packageName, price) {
+      document.getElementById('selected-package').innerText = packageName;
+      document.getElementById('selected-price').innerText = price;
+      document.getElementById('summary').style.display = 'block';
+      document.getElementById('payment-methods').style.display = 'none';
+      window.scrollTo({ top: document.getElementById('summary').offsetTop - 100, behavior: 'smooth' });
+    }
+
+    function showPayment() {
+      document.getElementById('payment-methods').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('payment-methods').offsetTop - 100, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
